@@ -1,0 +1,66 @@
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .section-heading h2,
+  .split-content h2,
+  .contacts h2 {
+    font-size: 48px;
+  }
+
+  .stat-card strong {
+    font-size: 64px;
+  }
+
+  .geography-stat strong {
+    font-size: 140px;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+  }
+
+  .hero-lead,
+  .section-lead,
+  .stat-card p,
+  .timeline-item p,
+  .info-card p,
+  .process-card p,
+  .quality-list p,
+  .products-heading > p,
+  .catalog-note p,
+  .geography-stat p {
+    font-size: 18px;
+  }
+
+  .info-card h3,
+  .process-card h3 {
+    font-size: 20px;
+  }
+
+  .quality-list h3,
+  .cities h3 {
+    font-size: 18px;
+  }
+
+  .process-card > span {
+    font-size: 30px;
+  }
+
+  .product-card p,
+  .catalog-note span,
+  .source-note {
+    font-size: 14px;
+  }
+
+  .cities li {
+    font-size: 16px;
+  }
+
+  .contact-item strong,
+  .contact-item a,
+  .contact-item address {
+    font-size: 18px;
+  }
+}

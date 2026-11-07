@@ -4,6 +4,7 @@ import '@fontsource/manrope/600.css';
 import '@fontsource/manrope/700.css';
 import '@fontsource/manrope/800.css';
 import './styles.css';
+import './typography-review.css';
 
 document.documentElement.classList.add('js');
 
