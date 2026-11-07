@@ -163,3 +163,11 @@ filterButtons.forEach((button) => {
     filterStatus.textContent = `Показано: ${filterNames[selectedFilter]}, ${visibleCount} позиций.`;
   });
 });
+
+const partnerForm = document.querySelector('[data-partner-form]');
+const partnerFormStatus = document.querySelector('[data-form-status]');
+
+partnerForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  partnerFormStatus.textContent = 'Демонстрационный режим: заявка не отправлена. Для связи используйте контакты ниже.';
+});

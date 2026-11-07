@@ -27,10 +27,10 @@
       </button>
       <nav class="site-menu" id="site-menu" aria-label="Основная навигация" data-menu>
         <a href="#about" data-nav-link>О заводе</a>
-        <a href="#production" data-nav-link>Производство</a>
-        <a href="#products" data-nav-link>Продукция</a>
-        <a href="#geography" data-nav-link>География</a>
-        <a class="menu-contact" href="#contacts" data-nav-link>Связаться</a>
+        <a href="#products" data-nav-link>Ассортимент</a>
+        <a href="#partners" data-nav-link>Для партнеров и оптовиков</a>
+        <a href="#where-to-buy" data-nav-link>Где купить</a>
+        <a class="menu-contact" href="#contacts" data-nav-link>Контакты</a>
       </nav>
     </div>
   </header>
@@ -45,7 +45,7 @@
           <p class="hero-lead">Овощные консервы и натуральные соки «Карабуэль» из местного сырья.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#products">Смотреть продукцию</a>
-            <a class="button button-ghost" href="#contacts">Стать партнёром</a>
+            <a class="button button-ghost" href="#partners">Стать партнёром</a>
           </div>
           <ul class="hero-points" aria-label="Преимущества">
             <li>Натуральный состав</li>
@@ -532,6 +532,79 @@
             <h3>Новые рынки</h3>
             <p>Федеральные и региональные сети, маркетплейсы, отраслевые выставки.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-light section-bordered partners" id="partners" aria-labelledby="partners-title">
+      <div class="container partners-layout">
+        <div class="partners-intro" data-reveal>
+          <p class="eyebrow">Сотрудничество</p>
+          <h2 id="partners-title">Для партнёров<br />и оптовиков</h2>
+          <p class="section-lead">Приглашаем к сотрудничеству розничные сети, дистрибьюторов и оптовых покупателей.
+            Предлагаем стабильные поставки продукции «Карабуэль», обсуждаем индивидуальные условия по объёмам,
+            ассортименту и логистике. Оставьте заявку — мы свяжемся с вами, чтобы уточнить потребности вашего
+            бизнеса и подготовить предложение.</p>
+          <a class="button button-primary partner-download" href="/files/karabuel-presentation.pdf"
+            download="Карабуэль — презентация.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" />
+            </svg>
+            Скачать презентацию / прайс
+          </a>
+        </div>
+        <form class="partner-form" method="post" data-partner-form data-reveal>
+          <div class="partner-form-heading">
+            <h3>Заявка на сотрудничество</h3>
+            <p>Заполните форму, и мы свяжемся с вами для обсуждения условий.</p>
+          </div>
+          <div class="partner-form-grid">
+            <label class="form-field">
+              <span>Компания</span>
+              <input type="text" name="company" autocomplete="organization" required />
+            </label>
+            <label class="form-field">
+              <span>ИНН</span>
+              <input type="text" name="inn" inputmode="numeric" pattern="[0-9]{10}|[0-9]{12}"
+                title="Введите 10 или 12 цифр" required />
+            </label>
+            <label class="form-field">
+              <span>Регион</span>
+              <input type="text" name="region" autocomplete="address-level1" required />
+            </label>
+            <label class="form-field">
+              <span>Контактное лицо</span>
+              <input type="text" name="contact_name" autocomplete="name" required />
+            </label>
+            <label class="form-field">
+              <span>Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required />
+            </label>
+            <label class="form-field">
+              <span>E-mail</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="form-field form-field-wide">
+              <span>Комментарий</span>
+              <textarea name="comment" rows="4"></textarea>
+            </label>
+          </div>
+          <div class="partner-form-footer">
+            <button class="button partner-form-submit" type="submit">Отправить заявку</button>
+            <p>Ответим на указанный телефон или e-mail.</p>
+          </div>
+          <p class="partner-form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section theme-light section-bordered where-to-buy" id="where-to-buy"
+      aria-labelledby="where-to-buy-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Продажи</p>
+          <h2 id="where-to-buy-title">Где купить</h2>
         </div>
       </div>
     </section>
