@@ -12,6 +12,23 @@ const menu = document.querySelector('[data-menu]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const progress = document.querySelector('[data-progress]');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mapContainer = document.querySelector('[data-map-container]');
+const mapFrame = document.querySelector('[data-map-frame]');
+const mapToggle = document.querySelector('[data-map-toggle]');
+const mapToggleLabel = document.querySelector('[data-map-toggle-label]');
+
+function setMapActive(isActive) {
+  mapContainer.classList.toggle('is-active', isActive);
+  mapFrame.tabIndex = isActive ? 0 : -1;
+  mapToggle.setAttribute('aria-pressed', String(isActive));
+  mapToggle.setAttribute('aria-label', isActive ? 'Вернуть прокрутку страницы' : 'Активировать интерактивную карту');
+  mapToggleLabel.textContent = isActive ? 'Вернуть прокрутку страницы' : 'Активировать карту';
+}
+
+setMapActive(false);
+mapToggle.addEventListener('click', () => {
+  setMapActive(!mapContainer.classList.contains('is-active'));
+});
 
 function closeMenu() {
   menuToggle.setAttribute('aria-expanded', 'false');
@@ -34,11 +51,17 @@ menu.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeMenu();
+  if (event.key === 'Escape') {
+    closeMenu();
+    setMapActive(false);
+  }
 });
 
 document.addEventListener('click', (event) => {
   if (menu.classList.contains('is-open') && !event.target.closest('.header-inner')) closeMenu();
+  if (mapContainer.classList.contains('is-active') && !event.target.closest('[data-map-container]')) {
+    setMapActive(false);
+  }
 });
 
 function updateScrollUI() {
@@ -51,9 +74,16 @@ function updateScrollUI() {
 window.addEventListener('scroll', updateScrollUI, { passive: true });
 window.addEventListener('resize', () => {
   updateScrollUI();
-  if (window.innerWidth > 900) closeMenu();
+  if (window.innerWidth >= 1024) closeMenu();
 });
 updateScrollUI();
+
+if ('IntersectionObserver' in window) {
+  const mapObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) setMapActive(false);
+  });
+  mapObserver.observe(mapContainer);
+}
 
 const revealElements = document.querySelectorAll('[data-reveal]');
 
